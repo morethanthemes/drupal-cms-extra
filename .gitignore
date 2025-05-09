@@ -1,0 +1,9 @@
+.ddev
+recipes
+vendor
+composer.lock
+!web/profiles/drupal_cms_installer
+web
+
+.editorconfig
+.gitattributes
