@@ -116,7 +116,10 @@
             "./vendor/bin/drush recipe ../recipes/extra_block",
             "./vendor/bin/drush recipe ../recipes/extra_landing_page",
             "./vendor/bin/drush recipe ../recipes/extra_content",
-            "./vendor/bin/drush cr"
+            "./vendor/bin/drush config:set system.site page.front /landing-page -y",
+	        "./vendor/bin/drush config:set system.site name 'Corporate Clean' -y",
+            "./vendor/bin/drush cr",
+            "./vendor/bin/drush uli"
         ]
     }
 }
