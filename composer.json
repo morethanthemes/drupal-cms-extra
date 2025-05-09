@@ -100,7 +100,7 @@
         }
     },
     "scripts": {
-        "post-install-cmd": [
+        "setup-site": [
             "./vendor/bin/drush site:install drupal_cms_installer --account-mail=admin@example.com --account-name=admin --account-pass=admin --site-name='My Site' --yes",
             "./vendor/bin/drush recipe ../recipes/drupal_cms_blog",
 	        "./vendor/bin/drush recipe ../recipes/drupal_cms_events",

@@ -13,6 +13,7 @@ If you want to use [DDEV](https://ddev.com) to run Drupal CMS locally, follow th
 ddev config --project-type=drupal11 --docroot=web
 ddev start
 ddev composer install
+ddev composer setup-site
 ddev launch
 ```
 
