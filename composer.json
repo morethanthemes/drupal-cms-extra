@@ -53,6 +53,7 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true,
+            "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "php-http/discovery": true
@@ -97,5 +98,25 @@
                 "  * Get involved with the Drupal community: https://drupal.org/getting-involved"
             ]
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "./vendor/bin/drush site:install drupal_cms_installer --account-mail=admin@example.com --account-name=admin --account-pass=admin --site-name='My Site' --yes",
+            "./vendor/bin/drush recipe ../recipes/drupal_cms_blog",
+	        "./vendor/bin/drush recipe ../recipes/drupal_cms_events",
+	        "./vendor/bin/drush recipe ../recipes/drupal_cms_news",
+	        "./vendor/bin/drush recipe ../recipes/drupal_cms_case_study",
+	        "./vendor/bin/drush recipe ../recipes/drupal_cms_person",
+	        "./vendor/bin/drush recipe ../recipes/drupal_cms_project",
+            "./vendor/bin/drush then basecore -y",
+	        "./vendor/bin/drush then corporateclean -y",
+	        "./vendor/bin/drush config:set system.theme default corporateclean -y",
+	        "./vendor/bin/drush en block_content -y",
+	        "./vendor/bin/drush en default_content -y",
+            "./vendor/bin/drush recipe ../recipes/extra_block",
+            "./vendor/bin/drush recipe ../recipes/extra_landing_page",
+            "./vendor/bin/drush recipe ../recipes/extra_content",
+            "./vendor/bin/drush cr"
+        ]
     }
 }
