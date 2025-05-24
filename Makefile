@@ -6,14 +6,15 @@ default: setup-admin install-modules
 
 setup-admin:
 	@echo "Setting admin password..."
-	$(DRUSH) user-password admin --password="$$(openssl rand -base64 16)"
+	$(DRUSH) user:password admin "$(openssl rand -base64 16)"
 	@echo "Updating admin email..."
-	$(DRUSH) user:email admin dev@morethanthemes.com
-
+	$(DRUSH) config:set system.site system.site.mail admin_email=dev@morethanthemes.com -y
 install-modules:
-	@echo "Requiring and enabling Passwordless module..."
-	$(COMPOSER) require drupal/passwordless:^2.0@beta
-	$(DRUSH) pm-enable passwordless -y
+#	Passwordless is not ready for Drupal 11
+#
+#	@echo "Requiring and enabling Passwordless module..."
+#	$(COMPOSER) require drupal/passwordless
+#	$(DRUSH) pm-enable passwordless -y
 	@echo "Requiring and enabling Simple Style Guide module..."
 	$(COMPOSER) require drupal/simple_styleguide
 	$(DRUSH) pm-enable simple_styleguide -y
