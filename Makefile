@@ -38,14 +38,14 @@ GTM_ENTITY_ID := $(GTM_ID).68357ddf5caa65.14569244
 
 setup-gtm:
 	@echo "Installing and configuring Google Tag Manager module..."
-	$(COMPOSER) require drupal/gtm
-	$(COMPOSER) require 'drupal/google_tag:^2.0'
-	$(DRUSH) pm-enable gtm -y
+	@echo $(COMPOSER) require drupal/gtm
+	@echo $(COMPOSER) require 'drupal/google_tag:^2.0'
+#	$(DRUSH) pm-enable gtm -y
 	$(DRUSH) pm-enable google_tag -y
-	$(DRUSH) config-set gtm.settings gtm_id "$(GTM_ID)" -y
-	$(DRUSH) config-set gtm.settings admin-pages 0 -y
-	$(DRUSH) config-set gtm.settings admin-disable 0 -y
-	$(DRUSH) config-set gtm.settings google-tag "$(GTM_ID)" -y
+#	$(DRUSH) config-set gtm.settings gtm_id "$(GTM_ID)" -y
+#	$(DRUSH) config-set gtm.settings admin-pages 0 -y
+#	$(DRUSH) config-set gtm.settings admin-disable 0 -y
+#	$(DRUSH) config-set gtm.settings google-tag "$(GTM_ID)" -y
 	$(DRUSH) config:set google_tag.container.$(GTM_ENTITY_ID) uuid $(GTM_UUID) -y
 	$(DRUSH) config:set google_tag.container.$(GTM_ENTITY_ID) id $(GTM_ENTITY_ID) -y
 	$(DRUSH) config:set google_tag.container.$(GTM_ENTITY_ID) label $(GTM_ID) -y
