@@ -20,9 +20,13 @@ install:
 
 setup-admin:
 	@echo "Setting admin password..."
-	$(DRUSH) user:password admin "$(openssl rand -base64 16)"
-	@echo "Updating admin email..."
-	$(DRUSH) config:set system.site system.site.mail admin_email=dev@morethanthemes.com -y
+#	$(DRUSH) user:password admin "$$(openssl rand -base64 16)"
+	@PASS=$$(openssl rand -base64 16); \
+	echo "Generated password: $$PASS"; \
+	$(DRUSH) user:password admin "$$PASS"
+#	@echo "Updating admin email..."
+#	$(DRUSH) config:set system.site system.site.mail admin_email=dev@morethanthemes.com -y
+
 install-modules:
 #	Passwordless is not ready for Drupal 11
 #
