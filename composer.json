@@ -39,11 +39,13 @@
         "drupal/drupal_cms_starter": "~1.1.0",
         "drupal/project_browser": "@beta",
         "drupal/recipe_installer_kit": "^1-alpha3@alpha",
+        "drupal/simple_styleguide": "^2.0",
         "drupal/webform": "@beta",
         "drush/drush": "^13",
-        "morethanthemes/extra_landing_page": "^1.0",
+        "morethanthemes/extra_block": "^1.0",
         "morethanthemes/extra_content": "^1.0",
-        "morethanthemes/extra_block": "^1.0"
+        "morethanthemes/extra_landing_page": "^1.0",
+        "morethanthemes/extra_styleguide": "^1.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -113,11 +115,14 @@
 	        "./vendor/bin/drush config:set system.theme default corporateclean -y",
 	        "./vendor/bin/drush en block_content -y",
 	        "./vendor/bin/drush en default_content -y",
+            "./vendor/bin/drush en simple_styleguide -y",
             "./vendor/bin/drush recipe ../recipes/extra_block",
             "./vendor/bin/drush recipe ../recipes/extra_landing_page",
             "./vendor/bin/drush recipe ../recipes/extra_content",
+            "./vendor/bin/drush recipe ../recipes/extra_styleguide",
             "./vendor/bin/drush config:set system.site page.front /landing-page -y",
 	        "./vendor/bin/drush config:set system.site name 'Corporate Clean' -y",
+            "./vendor/bin/drush config:import --partial --source=../recipes/extra_landing_page/config/sync -y",
             "./vendor/bin/drush cr",
             "./vendor/bin/drush uli"
         ]
