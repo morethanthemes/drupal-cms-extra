@@ -37,6 +37,8 @@
         "drupal/drupal_cms_project": "~1.1.0",
         "drupal/drupal_cms_seo_tools": "~1.1.0",
         "drupal/drupal_cms_starter": "~1.1.0",
+        "drupal/google_tag": "^2.0",
+        "drupal/gtm": "^1.9",
         "drupal/project_browser": "@beta",
         "drupal/recipe_installer_kit": "^1-alpha3@alpha",
         "drupal/simple_styleguide": "^2.0",
@@ -121,7 +123,7 @@
             "./vendor/bin/drush recipe ../recipes/extra_content",
             "./vendor/bin/drush recipe ../recipes/extra_styleguide",
             "./vendor/bin/drush config:set system.site page.front /landing-page -y",
-	        "./vendor/bin/drush config:set system.site name 'Corporate Clean' -y",
+	        "./vendor/bin/drush config:set system.site name 'CORPORATE CLEAN' -y",
             "./vendor/bin/drush config:import --partial --source=../recipes/extra_landing_page/config/sync -y",
             "./vendor/bin/drush cr",
             "./vendor/bin/drush uli"
