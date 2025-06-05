@@ -1,15 +1,25 @@
-# Drupal CMS
+# Drupal CMS Extra
 
-Drupal CMS is a fast-moving open source product that enables site builders to easily create new Drupal sites and extend them with smart defaults, all using their browser.
+This repository is an enhanced distribution of the official [Drupal CMS](https://www.drupal.org/project/drupal_cms), developed by [More than Themes](https://morethanthemes.com/). It builds upon the standard Drupal CMS by incorporating additional themes, sample content, and pre-configured layouts to provide a richer out-of-the-box experience.
 
-## Getting started
+## Getting Started
 
-If you want to use [DDEV](https://ddev.com) to run Drupal CMS locally, follow these instructions:
+You have two options to set up and use this enhanced Drupal CMS distribution:
 
-1. Install DDEV following the [documentation](https://ddev.com/get-started/)
-2. Open the command line and `cd` to the root directory of this project
-3. Run the following commands:
-```shell
+### Option 1: Composer-Based Installation (Recommended for Developers)
+
+This method uses Composer to download all assets (Drupal core, modules, themes, etc.) and assumes Composer is available in your environment. The repository is already preconfigured for local development using [DDEV](https://ddev.com), which is recommended.
+
+**Prerequisites:**
+
+* [Composer](https://getcomposer.org/)
+* [DDEV](https://ddev.com) (optional but suggested)
+
+**Installation Steps:**
+
+```bash
+git clone https://github.com/morethanthemes/drupal-cms-extra.git
+cd drupal-cms-extra
 ddev config --project-type=drupal11 --docroot=web
 ddev start
 ddev composer install
@@ -17,32 +27,62 @@ ddev composer setup-site
 ddev launch
 ```
 
-Drupal CMS has the same system requirements as Drupal core, so you can use your preferred setup to run it locally. [See the Drupal User Guide for more information](https://www.drupal.org/docs/user_guide/en/installation-chapter.html) on how to set up Drupal.
+> If not using DDEV, ensure your local environment meets [Drupal system requirements](https://www.drupal.org/docs/system-requirements) and adjust the commands accordingly.
 
-### Installation options
+### Option 2: Pre-Packaged ZIP Installation (No Composer Required)
 
-The Drupal CMS installer offers a list of features preconfigured with smart defaults. You will be able to customize whatever you choose, and add additional features, once you are logged in.
+For users without Composer or those seeking a simpler installation process, we provide pre-packaged ZIP files that include all necessary files.
 
-After the installer is complete, you will land on the dashboard.
+**Steps:**
+
+1. Download the latest release from:
+   👉 [https://github.com/morethanthemes/drupal-cms-extra/releases/latest](https://github.com/morethanthemes/drupal-cms-extra/releases/latest)
+2. Extract the ZIP file into your web server's root directory.
+3. Make sure your environment meets [Drupal's system requirements](https://www.drupal.org/docs/system-requirements).
+4. Open your site in a browser and follow the Drupal installation wizard.
+
+## Enhanced Features
+
+This enhanced distribution offers a richer default experience compared to the stock Drupal CMS:
+
+* **Pre-installed Free Themes** (latest versions):
+
+  * [BaseCore](https://www.drupal.org/project/basecore)
+  * [Corporate Clean](https://www.drupal.org/project/corporateclean)
+  * [Bootstrap Business](https://www.drupal.org/project/bootstrap_business)
+
+* **Convincing Sample Content**
+  Sample content for all core content types in Drupal CMS to demonstrate layouts and features.
+
+* **Landing Pages Content Type**
+  A dedicated content type for creating marketing or campaign landing pages using the Layout Builder.
+
+* **Reusable Blocks**
+  A library of reusable content blocks for assembling rich page layouts.
+
+* **Sample Landing Pages**
+  Pre-configured landing pages built using sample content and blocks.
+
+> This setup allows you to replicate the look and structure of More than Themes’ live demos like [Corporate Clean](https://corporateclean.morethanthemes.com/).
+
 
 ## Documentation
 
-Coming soon ... [We're working on Drupal CMS specific documentation](https://www.drupal.org/project/drupal_cms/issues/3454527).
+For more information on included themes, blocks, and layout features, please refer to:
+📘 [Webmaker+ Documentation](https://docs.webmaker.plus/)
 
-In the meantime, learn more about managing a Drupal-based application in the [Drupal User Guide](https://www.drupal.org/docs/user_guide/en/index.html).
 
 ## Contributing
 
-Drupal CMS is developed in the open on [Drupal.org](https://www.drupal.org). We are grateful to the community for reporting bugs and contributing fixes and improvements.
+Contributions are welcome!
 
-[Report issues in the queue](https://drupal.org/node/add/project-issue/drupal_cms), providing as much detail as you can. You can also join the #drupal-cms-support channel in the [Drupal Slack community](https://www.drupal.org/slack).
-
-Drupal CMS has adopted a [code of conduct](https://www.drupal.org/dcoc) that we expect all participants to adhere to.
-
-To contribute to Drupal CMS development, see the [drupal_cms project](https://www.drupal.org/project/drupal_cms).
+* Fork the repository
+* Submit a pull request
+* Or open an issue for bug reports and feature requests
 
 ## License
 
-Drupal CMS and all derivative works are licensed under the [GNU General Public License, version 2 or later](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
+This project is licensed under the [GNU General Public License, version 2 or later](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
 
-Learn about the [Drupal trademark and logo policy here](https://www.drupal.com/trademark).
+See [Drupal's trademark policy](https://www.drupal.com/trademark) for guidance on logo and name usage.
+
