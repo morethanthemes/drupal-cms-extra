@@ -20,6 +20,9 @@ This method uses Composer to download all assets (Drupal core, modules, themes, 
 ```bash
 git clone https://github.com/morethanthemes/drupal-cms-extra.git
 cd drupal-cms-extra
+```
+
+```bash
 ddev config --project-type=drupal11 --docroot=web
 ddev start
 ddev composer install
