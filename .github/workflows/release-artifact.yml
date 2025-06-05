@@ -27,7 +27,9 @@ jobs:
 
       - name: Create ZIP archive
         run: |
-          zip -r drupal-cms-extra.zip . -x ".git/*" ".github/*" "tests/*"
+          mkdir -p drupal-cms-extra
+          rsync -av --exclude=".git" --exclude=".github" --exclude="tests" ./ drupal-cms-extra/
+          zip -r drupal-cms-extra.zip drupal-cms-extra
 
       - name: Upload release asset
         uses: softprops/action-gh-release@v2
