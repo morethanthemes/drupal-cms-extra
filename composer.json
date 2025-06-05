@@ -43,9 +43,11 @@
         "drupal/webform": "@beta",
         "drush/drush": "^13",
         "morethanthemes/extra_block": "^1.0",
+        "morethanthemes/extra_block_content": "^1.0",
         "morethanthemes/extra_content": "^1.0",
         "morethanthemes/extra_landing_page": "^1.0",
-        "morethanthemes/extra_styleguide": "^1.0"
+        "morethanthemes/extra_styleguide": "^1.0",
+        "morethanthemes/extra_ux": "^1.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -85,6 +87,9 @@
             "enable-patching" : true,
             "drupal/default_content": {
                 "Add a Normalizer and Denormalizer to support Layout Builder": "https://www.drupal.org/files/issues/2022-12-06/default_content-3160146-53.patch"
+            },
+            "drupal/drupal_cms_starter": {
+                "Expose Extra recipes": "https://github.com/morethanthemes/drupal_cms_starter/compare/1.1.1...chore/allow-extra-recipes.patch"
             }
         },
         "drupal-core-project-message": {
