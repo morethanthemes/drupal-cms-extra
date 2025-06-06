@@ -16,5 +16,5 @@
 		"ghcr.io/ddev/ddev/install-ddev:latest": {}
 	},
 	// "postCreateCommand": "ddev config global --instrumentation-opt-in=true && make"
-	"postCreateCommand": "ddev config --project-type=drupal11 --docroot=web && ddev start && ddev composer install && ddev composer setup-site && ddev launch"
+	"postStartCommand": "ddev config --project-type=drupal11 --docroot=web && ddev start && ddev composer install && ddev composer setup-site && ddev launch"
 }
