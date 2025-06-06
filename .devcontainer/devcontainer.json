@@ -17,5 +17,16 @@
 	},
 	// "postCreateCommand": "ddev config global --instrumentation-opt-in=true",
 	// "postStartCommand": "ddev config --project-type=drupal11 --docroot=web && ddev start && ddev composer install && ddev composer setup-site && ddev launch",
-	"postCreateCommand": "export DDEV_NO_BEAMUP=true && ddev config --project-type=drupal11 --docroot=web --auto && ddev start -y && ddev composer install && ddev composer setup-site && ddev launch"
+	// "postCreateCommand": "export DDEV_NO_BEAMUP=true && ddev config --project-type=drupal11 --docroot=web --auto && ddev start -y && ddev composer install && ddev composer setup-site && ddev launch"
+	"postCreateCommand": [
+	    "export DDEV_NO_BEAMUP=true",
+	    "ddev config --project-type=drupal11 --docroot=web --auto",
+	    "echo 'DDEV configured.'",
+	    "ddev start -y",
+	    "echo 'DDEV started.'",
+	    "ddev composer install --no-interaction",
+	    "echo 'Depedencies (composer) required.'",
+	    "ddev composer setup-site",
+	    "ddev launch"
+	]
 }
