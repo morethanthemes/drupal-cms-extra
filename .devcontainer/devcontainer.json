@@ -17,5 +17,5 @@
 	},
 	// "postCreateCommand": "ddev config global --instrumentation-opt-in=true",
 	// "postStartCommand": "ddev config --project-type=drupal11 --docroot=web && ddev start && ddev composer install && ddev composer setup-site && ddev launch",
-	"postCreateCommand": "export DDEV_NO_BEAMUP=true && ddev config --project-type=drupal11 --docroot=web --auto && ddev start --auto && ddev composer install && ddev composer setup-site && ddev launch"
+	"postCreateCommand": "export DDEV_NO_BEAMUP=true && ddev config --project-type=drupal11 --docroot=web --auto && ddev start -y && ddev composer install && ddev composer setup-site && ddev launch"
 }
