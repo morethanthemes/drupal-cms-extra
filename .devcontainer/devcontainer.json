@@ -15,7 +15,7 @@
 	"features": {
 		"ghcr.io/ddev/ddev/install-ddev:latest": {}
 	},
-	"postCreateCommand": "ddev config global --instrumentation-opt-in=true",
+	// "postCreateCommand": "ddev config global --instrumentation-opt-in=true",
 	// "postStartCommand": "ddev config --project-type=drupal11 --docroot=web && ddev start && ddev composer install && ddev composer setup-site && ddev launch",
-	"postCreateCommand": "env DDEV_NO_BEAMING=true ddev config --project-type=drupal11 --docroot=web && ddev start && ddev composer install && ddev composer setup-site && ddev launch"
+	"postCreateCommand": "ddev config --project-type=drupal11 --docroot=web --auto && ddev start && ddev composer install && ddev composer setup-site && ddev launch"
 }
