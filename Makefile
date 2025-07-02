@@ -20,7 +20,6 @@ install:
 
 setup-admin:
 	@echo "Setting admin password..."
-#	$(DRUSH) user:password admin "$$(openssl rand -base64 16)"
 	@PASS=$$(openssl rand -base64 16); \
 	echo "Generated password: $$PASS"; \
 	$(DRUSH) user:password admin "$$PASS"
