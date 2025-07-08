@@ -111,6 +111,13 @@
     "scripts": {
         "setup-site": [
             "./vendor/bin/drush site:install drupal_cms_installer --account-mail=admin@example.com --account-name=admin --account-pass=admin --site-name='My Site' --yes",
+            "@setup-setup"
+        ],
+	"setup-site-interactive": [
+            "./vendor/bin/drush site:install drupal_cms_installer --account-mail=admin@example.com --account-name=admin --account-pass=admin --site-name='My Site'",
+            "@setup-setup"
+        ],
+        "setup-setup": [
             "./vendor/bin/drush recipe ../recipes/drupal_cms_blog",
 	        "./vendor/bin/drush recipe ../recipes/drupal_cms_events",
 	        "./vendor/bin/drush recipe ../recipes/drupal_cms_news",
@@ -132,6 +139,6 @@
             "./vendor/bin/drush config:import --partial --source=../recipes/extra_landing_page/config/sync -y",
             "./vendor/bin/drush cr",
             "./vendor/bin/drush uli"
-        ]
+        ],	
     }
 }
