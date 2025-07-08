@@ -41,7 +41,7 @@ GTM_ENTITY_ID := $(GTM_ID).68357ddf5caa65.14569244
 
 setup-gtm:
 	@echo "Installing and configuring Google Tag Manager module..."
-	@echo $(COMPOSER) require drupal/gtm
+#	@echo $(COMPOSER) require drupal/gtm
 	@echo $(COMPOSER) require 'drupal/google_tag:^2.0'
 #	$(DRUSH) pm-enable gtm -y
 	$(DRUSH) pm-enable google_tag -y
