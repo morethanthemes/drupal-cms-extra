@@ -18,6 +18,11 @@ install:
 	ddev composer setup-site
 	ddev launch
 
+install-interactive:
+	@echo "Running installation steps without DDEV..."
+	$(COMPOSER) install
+	$(COMPOSER) run setup-site-interactive
+
 setup-admin:
 	@echo "Setting admin password..."
 	@PASS=$$(openssl rand -base64 16); \
