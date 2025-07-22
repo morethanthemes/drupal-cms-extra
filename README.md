@@ -36,13 +36,21 @@ ddev launch
 
 For users without Composer or those seeking a simpler installation process, we provide pre-packaged ZIP files that include all necessary files.
 
-**Steps:**
+**Installation Steps:**
 
-1. Download the latest release from:
+1. **Download** the latest release from:
    👉 [https://github.com/morethanthemes/drupal-cms-extra/releases/latest](https://github.com/morethanthemes/drupal-cms-extra/releases/latest)
-2. Extract the ZIP file into your web server's root directory.
-3. Make sure your environment meets [Drupal's system requirements](https://www.drupal.org/docs/system-requirements).
+2. **Extract** the ZIP file into your web server's root directory.
+3. Make sure your environment meets the [Drupal's system requirements](https://www.drupal.org/docs/system-requirements).
 4. Open your site in a browser and follow the Drupal installation wizard.
+5. **During installation**, make sure to enable all available features (recipes).
+6. **Complete** the installation process as guided.
+7. **Enable** the `corporateclean` theme and set it as the default.
+8. **Enable** the following modules:
+   * `block_content`
+   * `default_content`
+   * `simple_styleguide`
+9. **Go to** *Extend > Recommended* and install the **Extra UX** recipe.
 
 ## Enhanced Features
 
