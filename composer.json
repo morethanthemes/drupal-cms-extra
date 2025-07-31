@@ -10,6 +10,10 @@
         "chat": "https://drupal.org/node/314178"
     },
     "repositories": {
+        "private-repo": {
+            "type": "composer",
+            "url": "https://packages.morethanthemes.com/"
+        },
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
@@ -20,7 +24,7 @@
         "cweagans/composer-patches": "^1.6.5",
         "drupal/basecore": "^1.0",
         "drupal/bootstrap_business": "^2.0",
-        "drupal/core": "@rc",
+        "drupal/core": ">=10.4 || ^11",
         "drupal/core-composer-scaffold": "^11.2",
         "drupal/core-project-message": "^11.2",
         "drupal/core-recipe-unpack": "^11.2",
@@ -40,12 +44,18 @@
         "drupal/drupal_cms_project": "^1.2",
         "drupal/drupal_cms_seo_tools": "^1.2",
         "drupal/drupal_cms_starter": "^1.2",
+        "drupal/entity_reference_revisions": "^1.12",
         "drupal/google_tag": "^2.0",
+        "drupal/image_widget_crop": "^3.0",
+        "drupal/paragraphs": "^1.19",
         "drupal/project_browser": "@beta",
         "drupal/recipe_installer_kit": "^1-alpha6@alpha",
         "drupal/simple_styleguide": "^2.0",
+        "drupal/video_embed_field": "^3.0@beta",
+        "drupal/views_infinite_scroll": "^2.0",
         "drupal/webform": "@beta",
         "drush/drush": "^13",
+        "morethanthemes/baseplus": "dev-main",
         "morethanthemes/extra_block": "^1.0",
         "morethanthemes/extra_content": "^1.0",
         "morethanthemes/extra_landing_page": "^1.0",
@@ -55,7 +65,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
