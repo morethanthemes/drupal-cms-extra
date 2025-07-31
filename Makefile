@@ -63,3 +63,37 @@ setup-gtm:
 	$(DRUSH) config:set google_tag.settings use_collection false -y
 
 
+service:
+	# Required modules
+	@echo "Installing and enabling contrib modules..."
+	ddev composer require 'drupal/video_embed_field:^3.0@beta'
+	ddev composer require 'drupal/entity_reference_revisions:^1.12'
+	ddev composer require 'drupal/paragraphs:^1.19'
+	ddev composer require 'drupal/image_widget_crop:^3.0'
+	ddev composer require 'drupal/views_infinite_scroll:^2.0'
+	ddev drush pm-enable video_embed_field paragraphs entity_reference_revisions image_widget_crop views_infinite_scroll -y
+	# services recipes
+	ddev composer require morethanthemes/extra_view_modes
+	ddev composer require morethanthemes/extra_paragraphs
+	ddev composer require morethanthemes/extra_service_views
+	ddev composer require morethanthemes/extra_service
+	@echo ""
+	@echo "✅ Now that dependencies are installed, you can apply the following recipes:"
+	@echo ""
+	@echo "  👉 To enable the Service content type and associated fields:"
+	@echo "     ddev drush recipe ../recipes/extra_service"
+	@echo ""
+	@echo "  👉 To enable additional views for Service content:"
+	@echo "     ddev drush recipe ../recipes/extra_service_views"
+	@echo ""
+	@echo "  Alternatively, you can enable these recipes via the Drupal UI:"
+	@echo "  - Navigate to 'Extend' > 'Recommended' `admin/modules/browse/recipes` and enable 'Extra Service' and 'Extra Service Views'"
+	@echo ""
+
+
+install-baseplus:
+	@echo "Installing Baseplus premium theme..."
+	@read -p "Enter packages.morethanthemes.com username: " USERNAME; \
+	read -s -p "Enter password: " PASSWORD; echo; \
+	ddev composer config --global --auth http-basic.packages.morethanthemes.com "$$USERNAME" "$$PASSWORD"; \
+	ddev composer require "morethanthemes/baseplus:dev-work/revert-basecore-to-baseplus"
