@@ -77,6 +77,7 @@ service:
 	ddev composer require morethanthemes/extra_paragraphs
 	ddev composer require morethanthemes/extra_service_views
 	ddev composer require morethanthemes/extra_service
+	./update-recipes.sh
 	@echo ""
 	@echo "✅ Now that dependencies are installed, you can apply the following recipes:"
 	@echo ""
