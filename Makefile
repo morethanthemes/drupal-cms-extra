@@ -96,4 +96,5 @@ install-baseplus:
 	@read -p "Enter packages.morethanthemes.com username: " USERNAME; \
 	read -s -p "Enter password: " PASSWORD; echo; \
 	ddev composer config --global --auth http-basic.packages.morethanthemes.com "$$USERNAME" "$$PASSWORD"; \
-	ddev composer require "morethanthemes/baseplus:dev-work/revert-basecore-to-baseplus"
+	ddev composer config repositories.private-repo composer https://packages.morethanthemes.com/
+	ddev composer require morethanthemes/baseplus:dev-work/revert-basecore-to-baseplus
