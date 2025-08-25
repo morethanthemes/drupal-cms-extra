@@ -18,7 +18,9 @@ ddev drush php:eval "
   'extra_ux',
   'extra_content',
   'extra_service',
-  'extra_service_views'
+  'extra_service_views',
+  'extra_product',
+  'extra_product_views'
 ]);
 \$config->save();
 "
