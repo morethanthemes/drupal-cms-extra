@@ -92,6 +92,37 @@ service:
 	@echo ""
 
 
+product:
+	# Required modules
+	@echo "Installing and enabling contrib modules..."
+	ddev composer require 'drupal/video_embed_field:^3.0@beta'
+	ddev composer require 'drupal/entity_reference_revisions:^1.12'
+	ddev composer require 'drupal/paragraphs:^1.19'
+	ddev composer require 'drupal/fontawesome:^3.0'
+	ddev composer require 'drupal/image_widget_crop:^3.0'
+	ddev composer require 'drupal/better_exposed_filters:^7.0'
+	ddev composer require 'drupal/views_infinite_scroll:^2.0'
+	ddev drush pm-enable video_embed_field paragraphs fontawesome entity_reference_revisions image_widget_crop better_exposed_filters views_infinite_scroll -y
+	# services recipes
+	ddev composer require morethanthemes/extra_view_modes
+	ddev composer require morethanthemes/extra_paragraphs
+	ddev composer require morethanthemes/extra_product_views
+	ddev composer require morethanthemes/extra_product
+	./update-recipes.sh
+	@echo ""
+	@echo "✅ Now that dependencies are installed, you can apply the following recipes:"
+	@echo ""
+	@echo "  👉 To enable the Service content type and associated fields:"
+	@echo "     ddev drush recipe ../recipes/extra_product"
+	@echo ""
+	@echo "  👉 To enable additional views for Service content:"
+	@echo "     ddev drush recipe ../recipes/extra_product_views"
+	@echo ""
+	@echo "  Alternatively, you can enable these recipes via the Drupal UI:"
+	@echo "  - Navigate to 'Extend' > 'Recommended' `admin/modules/browse/recipes` and enable 'Extra Product' and 'Extra Product Views'"
+	@echo ""
+
+
 install-baseplus:
 	@echo "Installing Baseplus premium theme..."
 	@read -p "Enter packages.morethanthemes.com username: " USERNAME; \
